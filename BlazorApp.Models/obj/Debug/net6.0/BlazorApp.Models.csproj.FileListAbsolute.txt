@@ -1,0 +1,12 @@
+C:\PROJECTS\BlazorApp\BlazorApp.Models\bin\Debug\net6.0\BlazorApp.Models.deps.json
+C:\PROJECTS\BlazorApp\BlazorApp.Models\bin\Debug\net6.0\BlazorApp.Models.dll
+C:\PROJECTS\BlazorApp\BlazorApp.Models\bin\Debug\net6.0\BlazorApp.Models.pdb
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.csproj.AssemblyReference.cache
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.AssemblyInfoInputs.cache
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.AssemblyInfo.cs
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.csproj.CoreCompileInputs.cache
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.dll
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\refint\BlazorApp.Models.dll
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\BlazorApp.Models.pdb
+C:\PROJECTS\BlazorApp\BlazorApp.Models\obj\Debug\net6.0\ref\BlazorApp.Models.dll

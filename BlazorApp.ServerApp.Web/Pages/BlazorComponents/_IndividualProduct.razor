@@ -1,0 +1,28 @@
+﻿
+<div class="bg-light border m-2 col-5">
+    <h4 class="text-secondary">Product - @prodDemo.Id</h4> <br />
+    <input type="checkbox" /> Add To Favorite <br /> <br />
+    Name - @prodDemo.Name <br />
+    Show Properties: <input type="checkbox" @bind-value="prodDemo.IsActive" checked="@(prodDemo.IsActive?"checked":null)" />
+
+    <br />
+
+    @if (prodDemo.IsActive)
+    {
+        @foreach (var prodProp in prodDemo.ProductProperties)
+        {
+            <p>@prodProp.Key - @prodProp.Value</p>
+        }
+    }
+
+    <br />
+
+    <_EditDeleteButton IsActive="@prodDemo.IsActive">
+
+    </_EditDeleteButton>
+</div>
+
+@code {
+    [Parameter]
+    public ProductDemoModel prodDemo { get; set; }
+}

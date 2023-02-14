@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BlazorApp.ServerApp.Web/1.0.0": {
+        "dependencies": {
+          "BlazorApp.Models": "1.0.0"
+        },
+        "runtime": {
+          "BlazorApp.ServerApp.Web.dll": {}
+        }
+      },
+      "BlazorApp.Models/1.0.0": {
+        "runtime": {
+          "BlazorApp.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BlazorApp.ServerApp.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlazorApp.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,148 @@
+﻿@page "/learnBlazor/bindprop"
+
+<h2 class="text-primary">Individual Product</h2>
+
+<div class="row">
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Playground</h3><hr />
+
+        <div>
+            Active: <input type="checkbox" @bind-value="model.IsActive" checked="@(model.IsActive?"checked":null)" /><br />
+        </div>
+
+        <div>
+            Product Properties:
+            <select @bind="selectedProp">
+                @foreach (var item in model.ProductProperties)
+                {
+                    <option value="@item.Key">@item.Key</option>
+                }
+            </select>
+        </div>
+
+    </div>
+
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Summary</h3><hr />
+        Name: @model.Name <br />
+        Active: @model.IsActive <br />
+        Price: @model.Price
+        <br />
+        Price: <input type="number" @bind-value="@model.Price" @bind-value:event="oninput" />
+        @*Price: <input type="number" @bind="@model.Price" @bind:event="oninput" />*@
+        <br />
+
+        This Product is: @(model.IsActive ? "Active" : "InActive") <br />
+
+        Property selected: @selectedProp
+        <br />
+
+        @if (!string.IsNullOrWhiteSpace(selectedProp))
+        {
+            <p>Property Value: @model.ProductProperties.FirstOrDefault(u => u.Key == selectedProp).Value</p>
+        }
+    </div>
+
+    <div class="col-12 pt-4">
+        <h2 class="text-primary">Product Table</h2>
+
+        <table class="table table-striped">
+            <tbody>
+                @foreach (var prod in products)
+                {
+                    <tr>
+                        <td>
+                            <input type="text" @bind-value="prod.Name" @bind-value:event="oninput" />
+                        </td>
+                        <td>
+                            <input type="number" @bind-value="prod.Price" @bind-value:event="oninput" />
+                        </td>
+                        <td>
+                            <input type="checkbox" @bind-value="prod.IsActive" checked="@(prod.IsActive?"checked":null)" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <br /> <br />
+
+        <h2>Product Summary</h2>
+
+        @foreach (var prod in products)
+        {
+            <p>@prod.Name [@prod.Price] is @(prod.IsActive ? "Active" : "InActive")</p>
+        }
+    </div>
+</div>
+
+<br />
+
+
+
+
+@code {
+    private string selectedProp = string.Empty;
+
+    ProductDemoModel model = new()
+    {
+        Id = 1,
+        Name = "Royal Aroma 5KG",
+        IsActive = true,
+        Price = 60,
+            ProductProperties = new List<ProductProDemoModel>()
+            {
+                new ProductProDemoModel
+                {
+                    Id = 1,
+                    Key = "Color",
+                    Value = "Black"
+                },
+                new ProductProDemoModel
+                {
+                    Id = 2,
+                    Key = "Flavor",
+                    Value = "Rose Jasmine"
+                },
+                new ProductProDemoModel
+                {
+                    Id = 3,
+                    Key = "Size",
+                    Value = "20oz"
+                }
+            }
+    };
+
+    List<ProductDemoModel> products = new();
+
+    protected override void OnInitialized()
+    {
+        products.Add(new()
+        {
+            Id = 1,
+            Name = "Midnight Blaze",
+            IsActive = false,
+            Price = 10.99,
+            ProductProperties = new()
+            {
+                new ProductProDemoModel { Id = 1, Key = "Flavor", Value = "Rose"},
+                new ProductProDemoModel { Id = 2, Key = "Size", Value = "20oz"},
+                new ProductProDemoModel { Id = 3, Key = "Color", Value="Purple" }
+            }
+        });
+
+        products.Add(new()
+        {
+            Id = 2,
+            Name = "Blossom Lily",
+            IsActive = true,
+            Price = 13.99,
+            ProductProperties = new()
+            {
+                new ProductProDemoModel { Id = 1, Key = "Flavor", Value = "Lily" },
+                new ProductProDemoModel { Id = 2, Key = "Size", Value = "18oz" },
+                new ProductProDemoModel {Id = 3,Key = "Color",Value = "White"}
+            }
+        });
+    }
+}
